@@ -8,13 +8,41 @@
 
 import SwiftUI
 
-import SwiftUI
+import Cocoa
 
 struct ContentView: View {
   var body: some View {
     HStack {
-        Button("Deformat", action:{ print("Deformat") })
-        Button("Quit", action: {print("Quit") })
+        Button("Deformat", action:{ print("Deformat")
+            guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else { return }
+            switch availableType {
+
+                // https://applehelpwriter.com/2013/05/27/how-to-paste-with-no-formatting/
+                
+            case .rtf:
+                print("Rich Text Data")
+                if let data = NSPasteboard.general.string(forType: .string) {
+                    NSPasteboard.general.clearContents()
+                    NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
+                }
+                
+            case .string:
+                print("Simple Text")
+                if let data = NSPasteboard.general.string(forType: .string) {
+                    NSPasteboard.general.clearContents()
+                    NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
+                }
+
+            default: break
+            }
+            
+            
+        })
+
+        Button("Quit", action: {
+            print("Quit")
+            NSApplication.shared.terminate(self)
+        })
       }
     }
 }
