@@ -14,6 +14,8 @@ import Cocoa
 
 struct ContentView: View {
     
+    var app: AppDelegate
+    
   var body: some View {
     HStack {
         Button("Deformat", action:{
@@ -41,6 +43,8 @@ struct ContentView: View {
             default: break
             }
             
+            //self.app.popover.contentViewController?.view.window?.makeKey()
+            self.app.testIt(self.app)
         })
 
         Button("✕", action: {
@@ -51,8 +55,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
