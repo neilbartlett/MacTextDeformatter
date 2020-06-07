@@ -5,12 +5,15 @@
 //  Created by Neil Bartlett on 2020-06-07.
 //  Copyright © 2020 Neil Bartlett. All rights reserved.
 //
+// TODOS
+// -- putting code in the content view seems wrong. Ideally should seaparate view description from code
+//
 
 import SwiftUI
-
 import Cocoa
 
 struct ContentView: View {
+    
   var body: some View {
     HStack {
         Button("Deformat", action:{
@@ -37,7 +40,6 @@ struct ContentView: View {
 
             default: break
             }
-            
             
         })
 
