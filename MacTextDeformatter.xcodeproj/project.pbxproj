@@ -14,6 +14,7 @@
 		AA0E37CD248D78BD00789476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0E37CB248D78BD00789476 /* Main.storyboard */; };
 		AA0E37D9248D78BE00789476 /* MacTextDeformatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E37D8248D78BE00789476 /* MacTextDeformatterTests.swift */; };
 		AA0E37E4248D78BE00789476 /* MacTextDeformatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E37E3248D78BE00789476 /* MacTextDeformatterUITests.swift */; };
+		AA0E37F2248D79E200789476 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA0E37F1248D79E200789476 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		AA0E37DF248D78BE00789476 /* MacTextDeformatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacTextDeformatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0E37E3248D78BE00789476 /* MacTextDeformatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTextDeformatterUITests.swift; sourceTree = "<group>"; };
 		AA0E37E5248D78BE00789476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0E37F1248D79E200789476 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		AA0E37B6248D78BB00789476 = {
 			isa = PBXGroup;
 			children = (
+				AA0E37F1248D79E200789476 /* README.md */,
 				AA0E37C1248D78BB00789476 /* MacTextDeformatter */,
 				AA0E37D7248D78BE00789476 /* MacTextDeformatterTests */,
 				AA0E37E2248D78BE00789476 /* MacTextDeformatterUITests */,
@@ -241,6 +244,7 @@
 			files = (
 				AA0E37CD248D78BD00789476 /* Main.storyboard in Resources */,
 				AA0E37CA248D78BD00789476 /* Preview Assets.xcassets in Resources */,
+				AA0E37F2248D79E200789476 /* README.md in Resources */,
 				AA0E37C7248D78BD00789476 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
