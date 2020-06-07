@@ -13,8 +13,12 @@ import Cocoa
 struct ContentView: View {
   var body: some View {
     HStack {
-        Button("Deformat", action:{ print("Deformat")
-            guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else { return }
+        Button("Deformat", action:{
+            print("Deformat")
+            guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else {
+                return
+            }
+            
             switch availableType {
 
             case .rtf:
