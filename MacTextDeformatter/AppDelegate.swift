@@ -22,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the popover
         let popover = NSPopover()
+        popover.contentSize = NSSize(width: 100, height: 50) // This seems to be necessary to force a size (it is correctly later by the contetnView)
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
         self.popover = popover
@@ -40,15 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
-        print("called toggle")
-        testIt(sender)
-    }
-    
-    @objc func testIt(_ sender: AnyObject?) {
-        print("Called it")
+        print("Toggling Popover")
         if let button = self.statusBarItem.button {
             if self.popover.isShown {
-                print("isShown")
+                print("unshowing")
                 self.popover.contentViewController?.view.window?.makeKey()
                 self.popover.performClose(sender)
             } else {

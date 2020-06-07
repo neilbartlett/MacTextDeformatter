@@ -14,44 +14,45 @@ import Cocoa
 
 struct ContentView: View {
     
+    // This is very wrong but need to close the popup from here
+    // probably should use a @state somehow to do this?
     var app: AppDelegate
     
-  var body: some View {
-    HStack {
-        Button("Deformat", action:{
-            print("Deformat")
-            guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else {
-                return
-            }
-            
-            switch availableType {
-
-            case .rtf:
-                print("Rich Text Data")
-                if let data = NSPasteboard.general.string(forType: .string) {
-                    NSPasteboard.general.clearContents()
-                    NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
+    var body: some View {
+        HStack {
+            Button("Deformat", action:{
+                print("Deformat")
+                guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else {
+                    return
                 }
+            
+                switch availableType {
+
+                case .rtf:
+                    print("Rich Text Data")
+                    if let data = NSPasteboard.general.string(forType: .string) {
+                        NSPasteboard.general.clearContents()
+                        NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
+                    }
                 
-            case .string:
-                print("Simple Text")
-                if let data = NSPasteboard.general.string(forType: .string) {
-                    NSPasteboard.general.clearContents()
-                    NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
+                case .string:
+                    print("Simple Text")
+                    if let data = NSPasteboard.general.string(forType: .string) {
+                        NSPasteboard.general.clearContents()
+                        NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
+                    }
+
+                default: break
                 }
-
-            default: break
-            }
             
-            //self.app.popover.contentViewController?.view.window?.makeKey()
-            self.app.testIt(self.app)
-        })
+                self.app.togglePopover(self.app)
+            })
 
-        Button("✕", action: {
-            print("Quit")
-            NSApplication.shared.terminate(self)
-        })
-      }
+            Button("✕", action: {
+                print("Quit")
+                NSApplication.shared.terminate(self)
+            })
+        }
     }
 }
 
