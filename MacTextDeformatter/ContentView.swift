@@ -17,8 +17,6 @@ struct ContentView: View {
             guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else { return }
             switch availableType {
 
-                // https://applehelpwriter.com/2013/05/27/how-to-paste-with-no-formatting/
-                
             case .rtf:
                 print("Rich Text Data")
                 if let data = NSPasteboard.general.string(forType: .string) {
@@ -39,7 +37,7 @@ struct ContentView: View {
             
         })
 
-        Button("Quit", action: {
+        Button("✕", action: {
             print("Quit")
             NSApplication.shared.terminate(self)
         })
