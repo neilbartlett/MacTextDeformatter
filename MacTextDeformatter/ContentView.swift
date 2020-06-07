@@ -8,13 +8,16 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+  var body: some View {
+    HStack {
+        Button("Deformat", action:{ print("Deformat") })
+        Button("Quit", action: {print("Quit") })
+      }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
