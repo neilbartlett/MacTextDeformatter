@@ -22,7 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the popover
         let popover = NSPopover()
-        popover.contentSize = NSSize(width: 100, height: 50) // This seems to be necessary to force a size (it is correctly later by the contetnView)
+        // wierdness >>
+        // This seems to be necessary to force a size (it is corrected later by the contentView)
+        // without it the location is off
+        popover.contentSize = NSSize(width: 100, height: 50)
+        //<< wierdness
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
         self.popover = popover
@@ -45,7 +49,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = self.statusBarItem.button {
             if self.popover.isShown {
                 print("unshowing")
+                // this section is a bit of a kludge:
+                // this first line ensures the pop-up dismissed when the mouse is clicked outside the popup
                 self.popover.contentViewController?.view.window?.makeKey()
+                // this second line closes the the pop up if we ask it to be done - eg via button inside the
+                // popup
                 self.popover.performClose(sender)
             } else {
                 print("showing")
