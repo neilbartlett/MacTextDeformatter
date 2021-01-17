@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         HStack {
             Button("Deformat", action:{
-                print("Deformat")
+                // print("Deformat")
                 guard let availableType = NSPasteboard.general.availableType(from: [.rtf, .string]) else {
                     return
                 }
@@ -29,14 +29,14 @@ struct ContentView: View {
                 switch availableType {
 
                 case .rtf:
-                    print("Rich Text Data")
+                    // print("Rich Text Data")
                     if let data = NSPasteboard.general.string(forType: .string) {
                         NSPasteboard.general.clearContents()
                         NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
                     }
                 
                 case .string:
-                    print("Simple Text")
+                    // print("Simple Text")
                     if let data = NSPasteboard.general.string(forType: .string) {
                         NSPasteboard.general.clearContents()
                         NSPasteboard.general.setString(data , forType: NSPasteboard.PasteboardType.string)
@@ -49,7 +49,7 @@ struct ContentView: View {
             })
 
             Button("✕", action: {
-                print("Quit")
+                // print("Quit")
                 NSApplication.shared.terminate(self)
             })
         }

@@ -22,11 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the popover
         let popover = NSPopover()
-        // wierdness >>
+        // weirdness >>
         // This seems to be necessary to force a size (it is corrected later by the contentView)
         // without it the location is off
         popover.contentSize = NSSize(width: 100, height: 50)
-        //<< wierdness
+        //<< weirdness
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
         self.popover = popover
@@ -45,18 +45,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func togglePopover(_ sender: AnyObject?) {
-        print("Toggling Popover")
+        // print("Toggling Popover")
         if let button = self.statusBarItem.button {
             if self.popover.isShown {
-                print("unshowing")
+                // print("unshowing")
                 // this section is a bit of a kludge:
-                // this first line ensures the pop-up dismissed when the mouse is clicked outside the popup
+                // this first line ensures the pop-up is dismissed when the mouse is clicked outside the popup
                 self.popover.contentViewController?.view.window?.makeKey()
                 // this second line closes the the pop up if we ask it to be done - eg via button inside the
                 // popup
                 self.popover.performClose(sender)
             } else {
-                print("showing")
+                // print("showing")
                 self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
             }
         }
