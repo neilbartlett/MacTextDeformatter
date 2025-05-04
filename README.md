@@ -1,12 +1,60 @@
-# MacTextDeformatter
+# 🧰 MacTextDeformatter
 
-This is a simple macOS toolbar application to perform various clipboard transformations. Note the clipboard is altered by these transformations.
+A lightweight macOS menu bar utility that transforms clipboard contents into formats you can actually use. Designed for speed, simplicity, and power-user workflows.
 
-The currently supported transformations are
-- Remove any rich-text formatting from the text in the clipboard. Note this can often be performed simply using the standard macOS Shift+Cmd+V, but the key sequence is not always reliable.
-- CSV to TSV. This converts CSV data (which does not paste nicely into cells in Excel or Google Sheets) into TSV which pastes with each field getting a new cell.
-- JSON to TSV. This converts the JSON key-value dictionary to a TSV that can be directly pasted into Excel or Google Sheets. The keys of the JSON are placed in columns and the values in the row below. 
-- JSON to TSV transposed. This is the same as JSON to TSV except that the keys are placed in rows and the values in the next column.
+---
+
+## ✨ Features
+
+✔️ **Remove Rich Text Formatting**  
+Strips styles, fonts, and formatting from text copied into the clipboard.  
+Useful when `⌘⇧V` fails or isn't available.
+
+📊 **CSV → TSV**  
+Converts comma-separated values into tab-separated values for **flawless pasting into Excel, Numbers, or Google Sheets**.
+
+🧾 **JSON → TSV**  
+Takes a JSON object or array of objects and flattens it into TSV — perfect for data inspection and spreadsheet import.
+
+🔁 **JSON → TSV (Transposed)**  
+Rotates the structure: keys become row labels, and values align across columns.
+
+🧠 **Clipboard-first design**  
+All operations read from and write to the macOS system clipboard. Just copy → run → paste.
+
+---
+
+## 🚀 Getting Started
+
+You’ll need:
+
+- macOS with [Xcode](https://apps.apple.com/us/app/xcode/id497799835) installed
+- No developer account required
+
+### 🔨 Build and Install
+
+From the project root:
+
+```bash
+make
+```
+This will:
+	1.	Build the app in Release mode
+	2.	Archive and extract it
+	3.	Install it to /Applications
+
+📌 If xcodebuild errors with a message about command-line tools, run:
+
+```bash
+make xcode-full
+make
+```
+
+to switch back to cmdline use
+
+```bash
+make xcode-cli
+```
 
 ## License
 
