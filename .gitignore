@@ -1,0 +1,27 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# macOS
+.DS_Store
+
+# Logs and backups
+*.log
+*.swp
+*.tmp
+*.bak
+
+# Fastlane or Notarization (optional)
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+
+# Carthage / CocoaPods (if used)
+Carthage/
+Pods/

@@ -25,10 +25,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // weirdness >>
         // This seems to be necessary to force a size (it is corrected later by the contentView)
         // without it the location is off
-        popover.contentSize = NSSize(width: 100, height: 50)
+        popover.contentSize = NSSize(width: 200, height: 50)
         //<< weirdness
         popover.behavior = .transient
-        popover.contentViewController = NSHostingController(rootView: contentView)
+//        popover.contentViewController = NSHostingController(rootView: contentView)
+        popover.contentViewController = SizedPopoverViewController(
+            rootView: contentView,
+            size: NSSize(width: 300, height: 240)
+        )
+        
         self.popover = popover
         
         // Create the status item
@@ -40,6 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusBarItem.button?.target = self
             button.action = #selector(togglePopover(_:))
         }
+        
         
         NSApp.activate(ignoringOtherApps: true)
     }
