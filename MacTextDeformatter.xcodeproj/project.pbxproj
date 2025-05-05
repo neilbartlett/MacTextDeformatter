@@ -19,6 +19,8 @@
 		AAFF8CB42DC7CE4A00BEAF9F /* JSONToTSVConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF8CB32DC7CE4A00BEAF9F /* JSONToTSVConverter.swift */; };
 		AAFF8CB62DC7E44700BEAF9F /* ClipboardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF8CB52DC7E44700BEAF9F /* ClipboardFormatter.swift */; };
 		AAFF8CB82DC7E78900BEAF9F /* SizedPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF8CB72DC7E78900BEAF9F /* SizedPopoverViewController.swift */; };
+		AAFF8CBB2DC937E500BEAF9F /* JSONToTSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF8CBA2DC937E500BEAF9F /* JSONToTSV.swift */; };
+		AAFF8CC02DC93FD000BEAF9F /* OrderedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF8CBF2DC93FB300BEAF9F /* OrderedJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		AAFF8CB32DC7CE4A00BEAF9F /* JSONToTSVConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToTSVConverter.swift; sourceTree = "<group>"; };
 		AAFF8CB52DC7E44700BEAF9F /* ClipboardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardFormatter.swift; sourceTree = "<group>"; };
 		AAFF8CB72DC7E78900BEAF9F /* SizedPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizedPopoverViewController.swift; sourceTree = "<group>"; };
+		AAFF8CBA2DC937E500BEAF9F /* JSONToTSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToTSV.swift; sourceTree = "<group>"; };
+		AAFF8CBF2DC93FB300BEAF9F /* OrderedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				AA0E37C1248D78BB00789476 /* MacTextDeformatter */,
 				AA0E37D7248D78BE00789476 /* MacTextDeformatterTests */,
 				AA0E37E2248D78BE00789476 /* MacTextDeformatterUITests */,
+				AAFF8CBC2DC9398A00BEAF9F /* Frameworks */,
 				AA0E37C0248D78BB00789476 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +114,8 @@
 		AA0E37C1248D78BB00789476 /* MacTextDeformatter */ = {
 			isa = PBXGroup;
 			children = (
+				AAFF8CBF2DC93FB300BEAF9F /* OrderedJSON.swift */,
+				AAFF8CBA2DC937E500BEAF9F /* JSONToTSV.swift */,
 				AAFF8CB72DC7E78900BEAF9F /* SizedPopoverViewController.swift */,
 				AA0E37C2248D78BB00789476 /* AppDelegate.swift */,
 				AA0E37C4248D78BB00789476 /* ContentView.swift */,
@@ -148,6 +155,13 @@
 				AA0E37E5248D78BE00789476 /* Info.plist */,
 			);
 			path = MacTextDeformatterUITests;
+			sourceTree = "<group>";
+		};
+		AAFF8CBC2DC9398A00BEAF9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +253,8 @@
 				Base,
 			);
 			mainGroup = AA0E37B6248D78BB00789476;
+			packageReferences = (
+			);
 			productRefGroup = AA0E37C0248D78BB00789476 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,9 +302,11 @@
 				AAFF8CB22DC7C60A00BEAF9F /* ClipboardTransformer.swift in Sources */,
 				AAFF8CB42DC7CE4A00BEAF9F /* JSONToTSVConverter.swift in Sources */,
 				AA0E37C5248D78BB00789476 /* ContentView.swift in Sources */,
+				AAFF8CC02DC93FD000BEAF9F /* OrderedJSON.swift in Sources */,
 				AAFF8CB62DC7E44700BEAF9F /* ClipboardFormatter.swift in Sources */,
 				AAFF8CB82DC7E78900BEAF9F /* SizedPopoverViewController.swift in Sources */,
 				AA0E37C3248D78BB00789476 /* AppDelegate.swift in Sources */,
+				AAFF8CBB2DC937E500BEAF9F /* JSONToTSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
